@@ -8,7 +8,7 @@
 ### m (numeric) degree of differentiation
 
 get_mean_spectra <- function(spectra, grouping_vector, smoothed_derivative = F, sd_upper_lower = T, sd = F, w = 3, p = 2, m = 2, ...){
-  wavenumber_cols <- strip_non_numbers(names(spectra)) %>% sapply(is.numeric)
+  wavenumber_cols <- !is.na(strip_non_numbers(names(spectra)))
   spectra <- spectra[wavenumber_cols]
   if(smoothed_derivative){
     message(paste0("prospectr::savitzkyGolay is using w = ", w, ", p = ", p, ", m = ", m))

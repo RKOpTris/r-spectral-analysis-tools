@@ -8,7 +8,7 @@
 # overlay allows the spectra to be overplotted on other data using par(new = T)
 # ... send further parameters to lines()
 
-plot_spectra_base <- function(tidy_spectra, group = "group", include_groups = "all", wn_hi = NULL, wn_lo = NULL, col_vector, alpha = 1, overlay = F, ...){
+plot_spectra_base <- function(tidy_spectra, group = "group", include_groups = "all", wn_hi = NULL, wn_lo = NULL, col_vector, alpha = 1, overlay = F, point_size = NULL, ...){
   range_x <- rev(range(tidy_spectra$wavenumber))
   if(!is.null(wn_hi)){
     range_x[1] <- wn_hi
@@ -39,6 +39,10 @@ plot_spectra_base <- function(tidy_spectra, group = "group", include_groups = "a
   col_vector <- paste0(tolower(col_vector), dec_to_hex(alpha, 1))
   
   for(i in 1:(length(unique(plot_deriv_subset[[group]])))){
+    if(!is.null(point_size)){
+      points(mean ~ wavenumber, plot_deriv_subset[plot_deriv_subset[[group]] == unique(plot_deriv_subset[[group]])[i], ],
+             col = col_vector[i], cex = point_size)
+    }
     lines(mean ~ wavenumber, plot_deriv_subset[plot_deriv_subset[[group]] == unique(plot_deriv_subset[[group]])[i], ],
           col = col_vector[i],
           ...)
