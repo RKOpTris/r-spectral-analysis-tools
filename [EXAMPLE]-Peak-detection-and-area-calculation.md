@@ -78,7 +78,7 @@ points(my_peaks$end_wavenumber, my_peaks$end_absorbance, col = "blue", pch = 4)
 text(my_peaks$peak_wavenumber, my_peaks$nudge, labels = round(my_peaks$peak_wavenumber, 0), cex = 0.5)
 ```
 
-![](%5BEXAMPLE%5D-Peat-detection-and-area-calculation-of-a-spectral-derivative_files/figure-gfm/s05-1.png)<!-- -->
+![](%5BEXAMPLE%5D-Peak-detection-and-area-calculation_files/figure-gfm/s05-1.png)<!-- -->
 
 ## Find the peak polygons
 
@@ -142,7 +142,7 @@ text(my_peaks$peak_wavenumber, my_peaks$nudge, labels = round(my_peaks$peak_wave
 plot_peak_polygons(plot_polygons)
 ```
 
-![](%5BEXAMPLE%5D-Peat-detection-and-area-calculation-of-a-spectral-derivative_files/figure-gfm/s07-1.png)<!-- -->
+![](%5BEXAMPLE%5D-Peak-detection-and-area-calculation_files/figure-gfm/s07-1.png)<!-- -->
 
 ## Do this all with one line for another sample
 
@@ -155,4 +155,4 @@ plot_peak_areas("CRYPTOMERIA-JAPONICA")
     ## `summarise()` has grouped output by 'group'. You can override using the
     ## `.groups` argument.
 
-![](%5BEXAMPLE%5D-Peat-detection-and-area-calculation-of-a-spectral-derivative_files/figure-gfm/s08-1.png)<!-- -->
+![](%5BEXAMPLE%5D-Peak-detection-and-area-calculation_files/figure-gfm/s08-1.png)<!-- -->
